@@ -19,7 +19,7 @@ function drawGrid() {
 
 drawGrid();
 
-let gridCells = document.querySelectorAll('div');
+let gridCells = document.querySelectorAll('.pinkbox');
 
 gridCells.forEach((cell) => {
     cell.addEventListener('mouseover', function(e) {
