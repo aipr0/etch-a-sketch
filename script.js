@@ -18,3 +18,11 @@ function drawGrid() {
 }
 
 drawGrid();
+
+let gridCells = document.querySelectorAll('div');
+
+gridCells.forEach((cell) => {
+    cell.addEventListener('mouseover', function(e) {
+        this.style.backgroundColor = 'black';
+    })
+})
