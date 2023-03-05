@@ -6,6 +6,14 @@ function createGrid() {
     //Wipes the grid every time createGrid is run, to append new divs to draw the new grid
     sketcherGrid.innerHTML = '';
 
+    //Quick check to limit the number of cells
+    if (gridCount > 32) {
+        gridCount = 32;
+    }
+    else if (gridCount <= 2) {
+        gridCount = 2;
+    }
+
     //For use in style.css, allows grid-template-rows and grid-template-columns to share space equally between the divs
     sketcherGrid.style.setProperty('--grid-number', gridCount);
 
