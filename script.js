@@ -9,6 +9,8 @@ gridSizer.addEventListener("click", () => {
 function drawGrid(gridSize) {
     const container = document.querySelector(".grid");
 
+    container.innerHTML = "";
+
     for(i = 0; i < gridSize; i++) {
         const gridRow = document.createElement("div");
         gridRow.classList.add("grid-row");
@@ -16,6 +18,10 @@ function drawGrid(gridSize) {
         for(j = 0; j < gridSize; j++) {
             const gridSquare = document.createElement("div");
             gridSquare.classList.add("grid-square");
+
+            gridSquare.addEventListener("mouseover", () => {
+                gridSquare.classList.add("grid-square-selected");
+            })
 
             gridRow.appendChild(gridSquare);
         }

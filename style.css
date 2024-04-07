@@ -44,12 +44,14 @@ body {
     display: flex;
     flex-flow: row nowrap;
     flex-grow: 1;
-    border: 1px solid blue;
 }
 
 .grid-square {
     flex-grow: 1;
-    border: 1px solid cyan;
+}
+
+.grid-square-selected {
+    background-color: black;
 }
 
 .footer {
