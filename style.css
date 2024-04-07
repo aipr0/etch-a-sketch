@@ -32,9 +32,24 @@ body {
 }
 
 .container .grid {
+    display: flex;
+    flex-flow: column nowrap;
     width: 400px;
     height: 400px;
     background-color: red;
+}
+
+.grid-row {
+    /* border: 1px solid black; */
+    display: flex;
+    flex-flow: row nowrap;
+    flex-grow: 1;
+    border: 1px solid blue;
+}
+
+.grid-square {
+    flex-grow: 1;
+    border: 1px solid cyan;
 }
 
 .footer {
