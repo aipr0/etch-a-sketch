@@ -1,6 +1,8 @@
 const gridSizer = document.querySelector(".sizer-button");
 const borderButton = document.querySelector(".border-button");
 
+let bordersVisible = true;
+
 gridSizer.addEventListener("click", () => {
   let gridSize = prompt("Enter a value to determine grid size:", "16");
   drawGrid(gridSize);
@@ -35,28 +37,49 @@ function drawGrid(gridSize) {
   }
 }
 
+function gridBorder() {
+  borderButton.addEventListener("click", () => {
+
+    if(bordersVisible) {
+      gridSquare = document.querySelectorAll(".grid-square");
+
+      gridSquare.forEach(square => {
+        square.classList.remove("grid-square");
+        square.classList.add("grid-square-no-border");
+      })
+
+      borderButton.textContent = "Add Grid Lines";
+      bordersVisible = false;
+    } else {
+      gridSquare = document.querySelectorAll(".grid-square-no-border");
+
+      gridSquare.forEach(square => {
+        square.classList.add("grid-square");
+        square.classList.remove("grid-square-no-border");
+      })
+
+      borderButton.textContent = "Remove Grid Lines";
+      bordersVisible = true;
+    }
+  });
+}
+
+function clearGrid() {
+  const clearButton = document.querySelector(".clear-button");
+
+  clearButton.addEventListener("click", () => {
+    if(bordersVisible) {
+      gridSquare = document.querySelectorAll(".grid-square");
+    } else {
+      gridSquare = document.querySelectorAll(".grid-square-no-border");
+    }
+
+    gridSquare.forEach(square => {
+      square.classList.remove("grid-square-selected");
+    })
+  });
+}
+
 drawGrid(16);
-
-// Logic to add and remove grid lines - can likely be improved but is functional
-borderButton.addEventListener("click", () => {
-
-  if(borderButton.textContent === "Remove Grid Lines") {
-    gridSquare = document.querySelectorAll(".grid-square");
-
-    gridSquare.forEach(square => {
-      square.classList.remove("grid-square");
-      square.classList.add("grid-square-no-border");
-    })
-
-    borderButton.textContent = "Add Grid Lines";
-  } else {
-    gridSquare = document.querySelectorAll(".grid-square-no-border");
-
-    gridSquare.forEach(square => {
-      square.classList.add("grid-square");
-      square.classList.remove("grid-square-no-border");
-    })
-
-    borderButton.textContent = "Remove Grid Lines";
-  }
-});
+gridBorder();
+clearGrid();
