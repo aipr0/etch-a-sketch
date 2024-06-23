@@ -31,12 +31,16 @@ body {
   align-items: center;
 }
 
+.grid {
+  border: 3px solid black;
+}
+
 .container .grid {
   display: flex;
   flex-flow: column nowrap;
   width: 400px;
   height: 400px;
-  background-color: red;
+  background-color: white;
 }
 
 .grid-row {
@@ -48,6 +52,8 @@ body {
 
 .grid-square {
   flex-grow: 1;
+  border: 1px solid black;
+
 }
 
 .grid-square-selected {
