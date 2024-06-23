@@ -1,61 +1,61 @@
 * {
-    padding: 0;
-    border: 0;
-    margin: 0;
+  padding: 0;
+  border: 0;
+  margin: 0;
 }
 
 body {
-    height: 100vh;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
+  height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
 }
 
 .header {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    gap: 32px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
 }
 
 .sizer-button {
-    background-color: wheat;
-    padding: 12px;
-    border-radius: 5px;
+  background-color: wheat;
+  padding: 12px;
+  border-radius: 5px;
 } 
 
 .container {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
 }
 
 .container .grid {
-    display: flex;
-    flex-flow: column nowrap;
-    width: 400px;
-    height: 400px;
-    background-color: red;
+  display: flex;
+  flex-flow: column nowrap;
+  width: 400px;
+  height: 400px;
+  background-color: red;
 }
 
 .grid-row {
-    /* border: 1px solid black; */
-    display: flex;
-    flex-flow: row nowrap;
-    flex-grow: 1;
+  /* border: 1px solid black; */
+  display: flex;
+  flex-flow: row nowrap;
+  flex-grow: 1;
 }
 
 .grid-square {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 .grid-square-selected {
-    background-color: black;
+  background-color: black;
 }
 
 .footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
