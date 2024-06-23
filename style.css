@@ -19,7 +19,7 @@ body {
   gap: 32px;
 }
 
-.sizer-button {
+.buttons {
   background-color: wheat;
   padding: 12px;
   border-radius: 5px;
@@ -53,7 +53,11 @@ body {
 .grid-square {
   flex-grow: 1;
   border: 1px solid black;
+}
 
+.grid-square-no-border {
+  flex-grow: 1;
+  border: none;
 }
 
 .grid-square-selected {

@@ -1,4 +1,5 @@
 const gridSizer = document.querySelector(".sizer-button");
+const borderButton = document.querySelector(".border-button");
 
 gridSizer.addEventListener("click", () => {
   let gridSize = prompt("Enter a value to determine grid size:", "16");
@@ -35,3 +36,27 @@ function drawGrid(gridSize) {
 }
 
 drawGrid(16);
+
+// Logic to add and remove grid lines - can likely be improved but is functional
+borderButton.addEventListener("click", () => {
+
+  if(borderButton.textContent === "Remove Grid Lines") {
+    gridSquare = document.querySelectorAll(".grid-square");
+
+    gridSquare.forEach(square => {
+      square.classList.remove("grid-square");
+      square.classList.add("grid-square-no-border");
+    })
+
+    borderButton.textContent = "Add Grid Lines";
+  } else {
+    gridSquare = document.querySelectorAll(".grid-square-no-border");
+
+    gridSquare.forEach(square => {
+      square.classList.add("grid-square");
+      square.classList.remove("grid-square-no-border");
+    })
+
+    borderButton.textContent = "Remove Grid Lines";
+  }
+});
